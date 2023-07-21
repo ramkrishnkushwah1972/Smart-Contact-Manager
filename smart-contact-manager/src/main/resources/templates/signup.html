@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+	<meta charset="UTF-8" />
+	<title>This is sugnup page</title>
+</head>
+<body>
+	<section>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6 offset-md-3">
+					<div class="my-card mt-3">
+					<div th:if="${session.message}" th:classappend="${session.message.type}" class="alert" role="alert">
+	  					<!-- for show error or success message -->
+	  					<p class="text-center" th:text="${session.message.content}"></p>
+	  					
+	  					<th:block th:text="${#session.removeAttribute('message')}" ></th:block>
+					</div>
+						<div class="container text-center">
+							<img style="width: 60px; height: 50px;" th:src="@{/image/reg.png}" alt="" />
+						</div>
+						
+						<h1 class="text-center" >Register Here</h1>
+						<form novalidate th:action="@{/do_register}" method="post" th:object="${user}">
+							
+							<!-- Name field -->
+							<div class="form-group">
+  								<label for="exampleFormControlInput1" class="form-label">Your Name</label>
+  								<input 
+	  								type="text" 
+	  								name="name"
+	  								class="form-control"
+	  								th:classappend="${#fields.hasErrors('name')?'is-invalid' : ''}" 
+	  								th:value="${user.name}"
+	  								id="name_field" 
+	  								placeholder="Enter your name" required="required">
+	  								
+	  								<div class="invalid-feedback" th:each="e:${#fields.errors('name')}" th:text="${e}">
+    								</div>
+							</div>
+							<!-- Email field -->
+							<div class="form-group">
+  								<label for="exampleFormControlInput1" class="form-label">Your Email</label>
+  								<input 
+	  								type="email"
+	  								name="email" 
+	  								class="form-control"
+	  								th:value="${user.email}" 
+	  								id="email_field" 
+	  								placeholder="Enter your email" required>
+							</div>
+							<!-- Password field -->
+							<div class="form-group">
+  								<label for="exampleFormControlInput1" class="form-label">Your Password</label>
+  								<input 
+	  								type="password"
+	  								name="password" 
+	  								class="form-control" 
+	  								id="password_field" 
+	  								placeholder="Enter your password" required="required">
+							</div>
+							
+							<!-- About field -->
+							<div class="form-group mt-3">
+  								<textarea 
+  								th:text="${user.about}"
+  								placeholder="Enter something yourself" 
+  								name="about" 
+  								class="form-control " 
+  								id="" cols="30" rows="10"></textarea>
+							</div>
+							<!-- Terms and conditions agreement -->
+							<div class="form-group form-check mt-2">
+  								<label for="" class="form-label">Accept terms and conditions.</label>
+  								<input 
+	  								type="checkbox" 
+	  								name="agreement"
+	  								class="form-check-input" 
+	  								id="agreement"> 
+	  								
+							</div>
+							
+							<div class="container text-center">
+								<button type="submit" class="btn bg-primary d-block w-100 mt-2 text-white">Submit</button>
+								<button type="reset" class="btn btn-warning d-block w-100 mt-2 text-white">Reset</button>
+							</div>
+						</form>
+					</div>	
+				</div>
+			</div>
+		</div>
+	</section>
+	
+</body>
+</html>

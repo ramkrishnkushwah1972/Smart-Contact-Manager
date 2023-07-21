@@ -1,0 +1,148 @@
+@import
+	url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+	;
+
+body {
+	background-color: #e2e2e2e2 !important;
+}
+
+.bg-primary {
+	background-color: #009688 !important;
+}
+
+.banner {
+	width: 100%;
+	height: 90vh;
+	background: linear-gradient(rgba(0, 0, 0, .6), rgba(0, 0, 0, .6)),
+		url(../image/img4.png);
+	background-size: cover;
+	color: white;
+}
+
+.my-card {
+	padding: 20px;
+	background: #FFFFFF;
+}
+
+/* css for login page */
+#login .container #login-row #login-column #login-box {
+	margin-top: 120px;
+	max-width: 580px;
+	height: 100%;
+	border: 1px solid #9C9C9C;
+	background-color: #FFFFFF;
+	border-radius: 5px;
+}
+
+#login .container #login-row #login-column #login-box #login-form {
+	padding: 20px;
+}
+
+#login .container #login-row #login-column #login-box #login-form #register-link
+	{
+	margin-top: -60px;
+	
+} 
+#login .container #login-row #login-column #login-box #login-form a{
+	
+	text-decoration: none;
+	
+}
+#login .container #login-row #login-column #login-box #login-form a:hover {
+  
+  text-decoration: underline;
+}
+/* #login .container #login-row #login-column #login-box #login-form #forgot-password {
+	margin-top: -40px;
+	float: right !important;
+} */
+/* Sidebar style */
+@media only screen and (max-width: 600px) {
+	.sidebar {
+		display: none;
+		width: 80% !important;
+		background: #FFFFFF;
+		height: 100vh;
+		position: fixed;
+		padding-top: 20px;
+	}
+	.content {
+		margin-left: 0% !important;
+	}
+}
+
+.sidebar {
+	width: 18%;
+	background: #FFFFFF;
+	height: 100%;
+	position: fixed;
+	padding-top: 45px;
+	z-index: 99999999999999;
+}
+
+.sidebar a {
+	display: block;
+	width: 100%;
+	padding: 10px 25px;
+	text-decoration: none;
+	color: gray;
+}
+
+.sidebar a:hover {
+	background: #e2e2e2;
+}
+
+.sidebar .divider {
+	height: .5px;
+	width: 100%;
+	background: #e2e2e2;
+	margin-top: 10px;
+}
+
+.sidebar .crossBtn {
+	position: absolute;
+	top: 0;
+	right: 35px;
+	font-size: 35px;
+	cursor: pointer;
+}
+
+.pointer {
+	cursor: pointer;
+}
+
+.content {
+	margin-left: 20%;
+}
+/* css for profile */
+.my_profile_picture {
+	width: 50px;
+	height: 50px;
+	object-fit: cover;
+	border-radius: 50%;
+	border: 1px solid #FFFFFF;
+}
+/* style for button  */
+.fabutton {
+	background: none;
+	padding: 0px;
+	border: none;
+}
+/* Search css */
+.search-container {
+	position: relative;
+}
+
+.search-result {
+	position: absolute;
+	background: #FFFFFF;
+	width: 100%;
+	padding: 10px;
+	border: 1px solid gray;
+	display: none;
+}
+
+.active {
+	background: #009688 !important;
+	color: #FFFFFF !important;
+}
